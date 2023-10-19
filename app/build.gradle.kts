@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 android {
@@ -67,4 +68,17 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+
+    // Orbit MVI
+    implementation(libs.mvi.orbit.viewmodel)
+    implementation(libs.mvi.orbit.compose)
+
+    // Ktor core
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.client.negotiation)
+    implementation(libs.ktor.serialization.json)
+
+    // Serialization
+    implementation(libs.serialization)
 }
